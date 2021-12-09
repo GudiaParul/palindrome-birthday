@@ -69,6 +69,29 @@ const inputDate = document.querySelector("#input-date");
       return false;
     }
 
+    function isLeapYear(year){
+        if(year % 400 === 0){
+          return true;
+        }
+        else if(year % 100 === 0){
+          return false;
+        }
+        else if(year % 4 === 0){
+          return true;
+        }
+        else{
+          return false;
+        }
+      }
+
+      function getNextDate(date){
+        var day = date.day+1;
+        var month = date.month;
+        var year = date.year;
+        var daysInMonth = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31
+
+
+
 
 
 
