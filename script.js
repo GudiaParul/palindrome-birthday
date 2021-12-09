@@ -118,15 +118,25 @@ const inputDate = document.querySelector("#input-date");
               }
               return {day: day, month: month, year: year}
             }
-            
-
-
-
-
-
-
-
   
+            function nextPalindromeDate(date){
+                var nextDate = getNextDate(date);
+                var track = 0;
+                var flag = false;
+                while(1){
+                  track++;
+                  flag = checkPalidromeForAllDateFormats(nextDate);
+                  if(flag){
+                    return [track, nextDate];
+                  }
+                  else{
+                    nextDate = getNextDate(nextDate);
+                  }
+                }
+              }
+
+
+
   function clickEventHandler(){
     var dateArray = inputDate.value.split("-");
     var date = {day: Number(dateArray[2]), month: Number(dateArray[1]), year: Number(dateArray[0])};
