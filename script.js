@@ -3,6 +3,46 @@ const inputDate = document.querySelector("#input-date");
   const output = document.querySelector("#output");
   
 
+  function reverseString(str){
+    return str.split("").reverse().join("");
+  }
+  
+  
+  function isPalindrome(str){
+    var reversedStr = reverseString(str);
+    if(str === reversedStr){
+      return true;
+    }
+    else{
+      return false;
+    }
+  }
+
+
+
+  function dateNumberToString(date){
+    if(date.day < 10){
+      date.day = "0" + date.day; 
+    }
+    else{
+      date.day = date.day.toString();
+    }
+  
+    if(date.month < 10){
+      date.month = "0" + date.month; 
+    }
+    else{
+      date.month = date.month.toString();
+    }
+  
+    date.year = date.year.toString();
+  
+    return date;
+  }
+  
+
+
+
   function dateAllVariations(date){
     var strDate = dateNumberToString(date)
    
@@ -21,6 +61,13 @@ const inputDate = document.querySelector("#input-date");
 
   function checkPalidromeForAllDateFormats(date){
     var dateArray = dateAllVariations(date);
+    for(var i = 0; i < dateArray.length; i++){
+        if(isPalindrome(dateArray[i])){
+          return true;
+        }3
+      }
+      return false;
+    }
 
 
 
