@@ -71,7 +71,25 @@ const inputDate = document.querySelector("#input-date");
 
 
 
+
+
   
   function clickEventHandler(){
     var dateArray = inputDate.value.split("-");
     var date = {day: Number(dateArray[2]), month: Number(dateArray[1]), year: Number(dateArray[0])};
+    var palindromeOrNot = checkPalidromeForAllDateFormats(date);
+    if(palindromeOrNot){
+      output.innerText = "Yay! your birthday is an palindrome";
+    }
+    else{
+      var [track, nextDate] = nextPalindromeDate(date);
+      output.innerText = "You missed palindrome by " + track +" days.";
+    }
+  }
+
+
+
+
+
+
+
