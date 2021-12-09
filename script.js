@@ -88,7 +88,7 @@ const inputDate = document.querySelector("#input-date");
         var day = date.day+1;
         var month = date.month;
         var year = date.year;
-        var daysInMonth = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31
+        var daysInMonth = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 
             if(month === 2){
                 if(isLeapYear(date.year)){
@@ -151,7 +151,7 @@ const inputDate = document.querySelector("#input-date");
   }
 
 
-
+  showBtn.addEventListener("click", clickEventHandler);
 
 
 
