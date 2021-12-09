@@ -90,6 +90,36 @@ const inputDate = document.querySelector("#input-date");
         var year = date.year;
         var daysInMonth = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31
 
+            if(month === 2){
+                if(isLeapYear(date.year)){
+                  if(day>29){
+                    day = 1;
+                    month++;
+                  }
+                }
+                else{
+                  if(day>28){
+                    day = 1;
+                    month++;
+                  }  
+                }
+              }
+            
+              else{
+                if(day>daysInMonth[month-1]){
+                  day = 1;
+                  month++;
+                }
+            
+                if(month > 12){
+                  month=1;
+                  year++;
+                }
+              }
+              return {day: day, month: month, year: year}
+            }
+            
+
 
 
 
